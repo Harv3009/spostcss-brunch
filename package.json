@@ -1,8 +1,8 @@
 {
-  "name": "postcss-brunch",
-  "version": "2.1.0",
-  "author": "Vincent De Oliveira",
-  "description": "Adds PostCSS support to brunch.",
+  "name": "spostcss-brunch",
+  "version": "1.0.0",
+  "author": "YoonKim (the original author: Vincent De Oliveira)",
+  "description": "This module is a kind of temporary module that is to fix sass-brunch + postcss-brunch war. ;https://github.com/brunch/postcss-brunch/pull/33#issuecomment-285905674",
   "scripts": {
     "test": "mocha test"
   },
@@ -10,16 +10,17 @@
     "postcss",
     "brunch",
     "postprocessor",
-    "postcss-runner"
+    "postcss-runner",
+    "scss-brunch"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brunch/postcss-brunch.git"
+    "url": "https://github.com/helols/spostcss-brunch"
   },
   "dependencies": {
     "anymatch": "^1.3.0",
     "loggy": "~0.3.5",
-    "postcss": "^6.0.9",
+    "postcss": "^6.0.12",
     "postcss-modules": "^0.8.0",
     "progeny": "^0.9.0"
   },

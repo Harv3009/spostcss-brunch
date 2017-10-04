@@ -51,8 +51,7 @@ class PostCSSCompiler {
 		this.map = this.config.map ?
 			Object.assign({}, defaultMapper, this.config.map) :
 			defaultMapper;
-		const progenyOpts = Object.assign({rootPath, reverseArgs: true}, cfg.progeny);
-		this.getDependencies = progeny(progenyOpts);
+
 		this.isIgnored = anymatch(ignoreCriterias);
 		this.processor = postcss(proc);
 		this.modules = this.config.modules;
@@ -105,6 +104,18 @@ class PostCSSCompiler {
 			throw error;
 		});
 	}
+	get getDependencies() {
+    return file => {
+      if (file.dependencies) {
+        return Promise.resolve(file.dependencies);
+      } else {
+        return new Promise((resolve, reject) => {
+          const progenyOpts = Object.assign({rootPath: this.rootPath, reverseArgs: true}, this.config.progeny);
+       		progeny(progenyOpts).apply(this, [file.data, file.path, (error, data) => {error == null ? resolve(data) : reject(error)}]);
+      	});
+      }
+    }
+  }
 }
 
 Object.assign(PostCSSCompiler.prototype, {

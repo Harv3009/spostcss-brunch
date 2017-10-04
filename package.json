@@ -1,6 +1,6 @@
 {
   "name": "spostcss-brunch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "YoonKim (the original author: Vincent De Oliveira)",
   "description": "This module is a kind of temporary module that is to fix sass-brunch + postcss-brunch war. ;https://github.com/brunch/postcss-brunch/pull/33#issuecomment-285905674",
   "scripts": {
